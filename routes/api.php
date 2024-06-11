@@ -46,7 +46,7 @@ Route::get('/userInfo',[ UserController::class,'UserInfo'])->middleware('auth:sa
 
 
 Route::post('/changePassword', [UserController::class, 'updatePassword'])->middleware('auth:sanctum');
-
+Route::post('/updateInfo', [UserController::class, 'updateInfo'])->middleware('auth:sanctum');
 
 // Route::resource('posts', UserController::class);
 // OCSSRzU478fepCiOEhKzWH8rx8aA87kcA44imPfn1a54a3d4

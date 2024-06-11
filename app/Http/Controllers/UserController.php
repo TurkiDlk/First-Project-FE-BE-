@@ -112,24 +112,19 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request)
+    public function updateInfo(Request $request)
     {
         $request->validate([
-            'Password' => 'required',
-           
+            'email' => 'required|unique:users|max:255|email',
+            'name' => 'required',
         ]);
-
-        if(!Hash::check($request->old_password, auth()->user()->password)){
-            return back()->with("error", "Old Password Doesn't match!");
-        }
-
-        User::whereId(auth()->user()->id)->update([
-            'password' => Hash::make($request->new_password)
+    
+        auth()->user()->update([
+            'email' => $request->email,
+            'name' => $request->name
         ]);
-
-        return back()->with("status", "Password changed successfully!");
-
-
+    
+        return response()->json(["message"=>"Info updated successfully"]);
     }
 
 }

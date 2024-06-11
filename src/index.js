@@ -1,61 +1,62 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import LoanForm from './LogIn';
-import SignUp from './SignUp';
-import ResetPass from './ResetPass';
-import Model from './Model';
-import Home from './Home';
-import UpdatePassword from './UpdatePassword';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import LoanForm from "./LogIn";
+import SignUp from "./SignUp";
+import ResetPass from "./ResetPass";
+import Model from "./Model";
+import Home from "./Home";
+import UpdatePassword from "./UpdatePassword";
+import EditName from "./EditName";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
+    element: <App />,
     children: [
       {
-        index:true,
-        element:<LoanForm/>,
+        index: true,
+        element: <LoanForm />,
       },
       {
         path: "login",
-        element:<LoanForm/>,
+        element: <LoanForm />,
       },
       {
         path: "SignUp",
-        element:<SignUp/>,
+        element: <SignUp />,
       },
       {
         path: "ResetPass",
-        element:<ResetPass/>,
+        element: <ResetPass />,
       },
       {
         path: "Model",
-        element:<Model/>,
+        element: <Model />,
       },
       {
         path: "Home",
-      element:<Home/>,
+        element: <Home />,
       },
       {
         path: "UpdatePassword",
-      element:<UpdatePassword/>,
+        element: <UpdatePassword />,
       },
-
+      {
+        path: "Home/EditName",
+        element: <EditName />,
+      },
     ],
   },
 ]);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 

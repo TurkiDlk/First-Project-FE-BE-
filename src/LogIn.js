@@ -9,8 +9,8 @@ import useAuth from "./useAuth";
 
 export default function LoanForm() {
   const [showModel, setShowModel] = useState(false);
-  const [loanInput, setLoanInput] = useState({
-    name: "",
+   const [loanInput, setLoanInput] = useState({
+  
     email: "",
     pass: "",
   });

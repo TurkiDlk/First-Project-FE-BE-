@@ -20,8 +20,6 @@ export default function Home({ props }) {
         .get("/userInfo")
         .then((res) => {
           setUserInfo(res.data);
-
-       
         })
         .catch(function (error) {
           Swal.fire({
@@ -61,7 +59,7 @@ export default function Home({ props }) {
 
         <Button
           onClick={() => {
-            navigate("/UpdatePassword");
+            navigate("EditName");
           }}
           variant="contained"
           sx={{ margin: 3 }}
